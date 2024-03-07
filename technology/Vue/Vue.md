@@ -104,3 +104,25 @@ html中包含了一些JS语法代码，语法分为两种，分别为：
 **备注：**
 1. 双向绑定一般都应用在表单类元素上（如：input、select等）。
 2. `v-model:value` 可以简写为 `v-model`，因为v-model默认收集的就是value值。
+
+```html
+    <div id="root">
+        <!-- 普通写法 -->
+        <!-- 单向数据绑定：<input type="text" v-bind:value="name"><br/>
+        双向数据绑定：<input type="text" v-model:value="name"> -->
+        <!-- 简写 -->
+        单向数据绑定：<input type="text" :value="name"><br/>
+        双向数据绑定：<input type="text" v-model="name">
+    </div>
+    
+    <script type="text/javascript">
+        Vue.config.productionTip = false
+
+        new Vue({
+            el:'#root',
+            data:{
+                name:'Vue'
+            }
+        })
+    </script>
+```
