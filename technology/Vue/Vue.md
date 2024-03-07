@@ -53,3 +53,42 @@ Vue是一套用于构建用户界面的[[渐进式]]JavaScript框架
         })
     </script>
 ```
+## 模板语法
+
+html中包含了一些JS语法代码，语法分为两种，分别为：
+
+- ==插值语法==
+	- 功能：用于解析标签体内容。
+	- 写法：{{xxx}}，xxx是js表达式，且可以直接读取到data中的所有属性。
+- ==指令语法==
+	- 功能：用于解析标签（包括：标签属性、标签体内容、绑定事件......）。
+	- 举例：v-bind:href="xxx" 或 简写为 :href="xxx"，xxx同样要写js表达式，且可以直接读取到data中的所有属性。
+	- 备注：Vue中有很多的指令，且形式都是 :v-???，此处我们只是拿v-bind举例。
+
+```html
+    <div id="root">
+        <h1>插值语法</h1>
+        <h3>你好,{{name}}</h3>
+        <hr/>
+        <h1>指令语法</h1>
+        <a v-bind:href="vue2_url">{{vue.vue2_name}}</a><br/>
+        <a :href="vue3_url">{{vue.vue3_name}}</a>
+    </div>
+    
+    <script type="text/javascript">
+        Vue.config.productionTip = false // 阻止Vue在启动时生成生产提示
+
+        new Vue({
+            el:'#root',
+            data:{
+                name:'Vue',
+                vue2_url:'https://v2.cn.vuejs.org/',
+                vue3_url:'https://cn.vuejs.org/',
+                vue:{
+                    vue2_name:'Vue2官网',
+                    vue3_name:'Vue3官网'
+                }
+            }  
+        })
+    </script>
+```
