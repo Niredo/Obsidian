@@ -40,9 +40,12 @@
 
 Java诞生于**SUN（Stanford University Network），09年**SUN被**Oracle（甲骨文）收购**。
 
-Java之父是**詹姆斯·高斯林（James Gosling）**
+Java之父是**詹姆斯·高斯林（James Gosling）**。
 
 ![](image/Java发展史.png)
 
-**JavaSE（Java Platform,Standard Edition 标准版）**：允许您在桌面和服务器上开发和部署Java应用程序
+**JavaSE（Java Platform,Standard Edition 标准版）**：允许您在桌面和服务器上开发和部署Java应用程序。
 
+**JavaEE（Java Platform,Enterprise Edition 企业版）**：是为开发企业环境下的应用程序提供的一套解决方案，主要针对于Web应用程序开发。
+
+**JavaME（Java Platform,Micro Edition 小型版）**：为互联网上的嵌入式和移动设备上运行的应用提供了一个健壮、灵活的环境：微控制器、传感器、网关、移动电话、个人数字助理（PDA）、电视机顶盒、打印机等等。
