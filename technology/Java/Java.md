@@ -115,3 +115,74 @@ jre（Java Runtime Environment）：java运行环境，包含了jvm以及后面�
 jdk和jre以及jvm的关系：jdk包含了jre，jre包含了jvm。
 
 但是从jdk9开始jdk目录就没有单独的jre目录了，因为jre作为一个运行时，里面不需要包含太多的东西浪费空间，降低运行效率，在jdk9的时候引用模块化的技术，让开发者能按照自己的应用创建一个最小的运行时（比如一个微服务的部署应用仅仅需要一个非常小的runtime，而不是像以前一样不管应用复杂还是简单，都需要一个近百兆的jre运行）这样提高了运行效率。
+# Java第一个程序的开发
+
+## 步骤
+
+1. 编写：
+	1. 创建一个文本文档，将后缀名改成`.java`，变成一个java文件。
+	2. 注意：需要将文件的后缀名显示出来。
+2. 编译：
+	1. 命令：`javac java文件名.java`。
+	2. 注意：javac会将java文件编译，生成一个.class文件（字节码文件），jvm运行只认class文件。
+3. 运行：
+	1. 命令：java `class文件名`（不需要带后缀名）。
+## Hello World
+
+```java
+public class HelloWorld{
+	public static void main(String[] args){
+		System.out.println("Hello,World!");
+	}
+}
+```
+
+## 注释
+
+### 概述
+
+对代码的解释说明
+
+### 分类
+
+```java
+ a.单行注释：
+   // 注释内容
+
+ b.多行注释：
+   /*
+    注释内容
+    */
+
+ c.文档注释：
+   /**
+     注释内容
+   */
+```
+e.g.
+```java
+// 单行注释 class后面的名字要和java文件名一致
+public class HelloWorld{
+	/*
+	  多行注释：
+	    main是一个方法，是程序的入口，jvm运行程序要找main当入口执行程序。
+	*/
+	public static void main(String[] args){
+		/**
+		  文档注释：
+		    下面的语句是输出语句。
+		*/
+		System.out.println("Hello,World!");
+	}
+}
+```
+
+### 文档注释的作用
+
+将来我们给别人一个开发好的类，如何让别人快速对我们写的代码了解呢？
+
+我们的文档注释中的内容可以根据 javadoc 命令生成一个文档（API文档）
+
+别人拿到这个文档，就能快速对此类以及类中实现的功能，进行快速了解
+
+命令：`javadoc -d 要生成的文件夹名称 -author -version 文件名.java`
